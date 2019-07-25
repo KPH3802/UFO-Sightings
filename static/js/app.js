@@ -42,38 +42,41 @@ button.on("click", function () {
   var stateInput = inputElement2.property('value');
   console.log('State Input:', stateInput);
 
-  
+  // Select the input element (state)
+  var inputElement2 = d3.select("#state");
+  console.log('Input Element:', inputElement2);
+
+  // Get value
+  var stateInput = inputElement2.property('value');
+  console.log('State Input:', stateInput);
+
 
   // Filter by date input
-if (stateInput !== "") {
+  if (stateInput !== "") {
 
-  var filtered_dates = data.filter(
-    function (obj) {
-      // return obj['datetime'] === dateInput && obj['state'] == 'ca' // all in one
-      return obj['datetime'] === dateInput
-    }
-  );
-  // Filter by state input
-  var filtered_states = filtered_dates.filter(
-    function (obj) {
-      return obj['state'] === stateInput;
-    }
-  );
-  
-} else {
-  var filtered_states = data.filter(
-    function (obj) {
-      // return obj['datetime'] === dateInput && obj['state'] == 'ca' // all in one
-      return obj['datetime'] === dateInput
-    }
-  );
+    var filtered_dates = data.filter(
+      function (obj) {
+        // return obj['datetime'] === dateInput && obj['state'] == 'ca' // all in one
+        return obj['datetime'] === dateInput
+      }
+    );
+    // Filter by state input
+    var filtered_states = filtered_dates.filter(
+      function (obj) {
+        return obj['state'] === stateInput;
+      }
+    );
 
-  
-};
-  
+  } else {
+    var filtered_states = data.filter(
+      function (obj) {
+        // return obj['datetime'] === dateInput && obj['state'] == 'ca' // all in one
+        return obj['datetime'] === dateInput
+      }
+    );
 
-  
 
+  };
   console.log('Filtered Dates:', filtered_dates);
 
   // remove the data from tbody

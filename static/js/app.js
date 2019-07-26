@@ -39,30 +39,26 @@ button.on("click", function () {
     console.log('Input Element2:', inputElement2);
 
     // Get value
-    var cityInput = inputElement2.property('value');
+    // Convert string to lower case to take in all cases
+    var cityInput = inputElement2.property('value').toLowerCase();
     console.log('City Input:', cityInput);
 
     // Select the input element (state)
     var inputElement3 = d3.select("#state");
     console.log('Input Element3:', inputElement3);
 
-    // Convert to lowercase to handle both upper and lower case entries
-    // var inputElement3 = inputElement3.toLowerCase();
-    
-
     // Get value
-    var stateInput = inputElement3.property('value');
+    // Convert string to lower case to take in all cases
+    var stateInput = inputElement3.property('value').toLowerCase();
     console.log('State Input:', stateInput);
-
-    // var stateInput2 = stateInpu
-    // console.log('Type of State varilable:', typeof stateInput2);
 
     // Select the input element (country)
     var inputElement4 = d3.select("#country");
     console.log('Input Element:', inputElement4);
 
-    // Get value
-    var countryInput = inputElement4.property('value');
+    // Get value 
+    // Convert string to lower case to take in all cases
+    var countryInput = inputElement4.property('value').toLowerCase();
     console.log('Country Input:', countryInput);
 
     // Select the input element (shape)
@@ -70,7 +66,8 @@ button.on("click", function () {
     console.log('Input Element:', inputElement5);
 
     // Get value
-    var shapeInput = inputElement5.property('value');
+    // Convert string to lower case to take in all cases
+    var shapeInput = inputElement5.property('value').toLowerCase();
     console.log('Shape Input:', shapeInput);
 
 

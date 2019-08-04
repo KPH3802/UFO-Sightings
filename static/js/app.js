@@ -34,6 +34,11 @@ button.on("click", function () {
 
     console.log('HEY THE BUTTON CLICK HANDLER WORKS!');
 
+    // from data.js 
+    var filterUFOdata = data;
+
+
+
     // Select the input element (date time)
     var inputElement1 = d3.select("#datetime");
     console.log('Input Element1:', inputElement1);
@@ -125,13 +130,28 @@ button.on("click", function () {
             }
         );
     }
+    if (dateInput === "" && cityInput === ""
+        && stateInput === "" && countryInput === ""
+        && shapeInput === "") {
+        console.log("The form is blank");
+        tbody.html('');
+        console.log('Blanking the form');
+        data.forEach((UFOSighting) => {
+            var row = tbody.append("tr");
+            Object.entries(UFOSighting).forEach(([key, value]) => {
+                var cell = row.append("td");
+                cell.text(value);
+            });
+        });
+        console.log('We reached here');
 
-
+    }
     // remove the data from tbody
     tbody.html('');
 
     // Put the data filtered on dates into the table
     filterUFOdata.forEach((UFOSighting) => {
+        console.log('Test');
         var row = tbody.append("tr");
         Object.entries(UFOSighting).forEach(([key, value]) => {
             var cell = row.append("td");
@@ -150,6 +170,14 @@ button.on("click", function () {
 
 button2.on("click", function () {
     d3.event.preventDefault();
+
+    var dateInput = '';
+    var cityInput = '';
+    var stateInput = '';
+    var countryInput = '';
+    var hapeInput = '';
+    var filterUFOdata = '';
+
     tbody.html('');
     data.forEach((UFOSighting) => {
         var row = tbody.append("tr");

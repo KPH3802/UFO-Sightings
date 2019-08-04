@@ -178,6 +178,8 @@ button2.on("click", function () {
     var hapeInput = '';
     var filterUFOdata = '';
 
+    // d3.selectAll(#filters).value('');
+
     tbody.html('');
     data.forEach((UFOSighting) => {
         var row = tbody.append("tr");

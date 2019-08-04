@@ -4,6 +4,8 @@ var filterUFOdata = data;
 // Use D3 to create the table body
 var tbody = d3.select("tbody");
 
+
+
 // Populate the table with all the data first 
 
 data.forEach((UFOSighting) => {
@@ -17,9 +19,15 @@ data.forEach((UFOSighting) => {
 
 /*            BUTTON HANDLING SECTION             */
 
+// Set the filter button
 var button = d3.select("#filter-btn");
 console.log('Here is the button:', button);
 
+// Set the reset button
+var button2 = d3.select("#reset-btn");
+console.log('Here is the button:', button2);
+
+// Filter click 
 button.on("click", function () {
     // Prevents the page from refreshing
     d3.event.preventDefault();
@@ -130,7 +138,25 @@ button.on("click", function () {
             cell.text(value);
         });
     });
+
+
+
+
 });
 
 
+// Reset button set 
 
+
+button2.on("click", function () {
+    d3.event.preventDefault();
+    tbody.html('');
+    data.forEach((UFOSighting) => {
+        var row = tbody.append("tr");
+        Object.entries(UFOSighting).forEach(([key, value]) => {
+            var cell = row.append("td");
+            cell.text(value);
+        });
+    });
+
+});

@@ -4,6 +4,14 @@ var filterUFOdata = data;
 // Use D3 to create the table body
 var tbody = d3.select("tbody");
 
+// Use D3 to set the list
+// var datetimeli = d3.select('#datetime');
+// var cityli = d3.select('#city');
+// var stateli = d3.select('#state');
+// var countryli = d3.select('#country');
+// var shapeli = d3.select('#shape');
+var formcontrol = d3.selectAll('.form-control');
+
 
 
 // Populate the table with all the data first 
@@ -171,15 +179,16 @@ button.on("click", function () {
 button2.on("click", function () {
     d3.event.preventDefault();
 
-    var dateInput = '';
-    var cityInput = '';
-    var stateInput = '';
-    var countryInput = '';
-    var hapeInput = '';
-    var filterUFOdata = '';
+    // var dateInput = '';
+    // var cityInput = '';
+    // var stateInput = '';
+    // var countryInput = '';
+    // var hapeInput = '';
+    // var filterUFOdata = '';
 
-    // d3.selectAll(#filters).value('');
 
+    // lists.html('');
+    formcontrol.html('');
     tbody.html('');
     data.forEach((UFOSighting) => {
         var row = tbody.append("tr");
